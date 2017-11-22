@@ -48,9 +48,9 @@
       </nav>
       <nav id="sub-nav">
         
-          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="Flux RSS"></a>
         
-        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+        <a id="nav-search-btn" class="nav-icon" title="Rechercher"></a>
       </nav>
       <div id="search-form-wrap">
         <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
@@ -83,7 +83,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="Github-hexo搭建博客（填坑）"><a href="#Github-hexo搭建博客（填坑）" class="headerlink" title="Github+hexo搭建博客（填坑）"></a>Github+hexo搭建博客（填坑）</h1><p>标签（空格分隔）： 博客搭建</p>
+        <h1 id="Github-hexo搭建博客（填坑）"><a href="#Github-hexo搭建博客（填坑）" class="headerlink" title="Github+hexo搭建博客（填坑）"></a>Github+hexo搭建博客（填坑）</h1><p>标签： 博客搭建</p>
 <hr>
 <p>目录</p>
 <ul>
@@ -104,15 +104,12 @@
 <li>其他</li>
 </ul>
 <h1 id="1-前言"><a href="#1-前言" class="headerlink" title="1. 前言"></a><strong>1. 前言</strong></h1><p>搭博客前观望了很久，想来想去最后还是用了Github，不得不说用Github搭真的非常方便。要准备的东西不多，仅仅需要Github账号，Git客户端还有Node.js。网上有非常详细的搭建过程，这里就不详讲了，仅简单说下过程然后贴上我参考的博客：<a href="http://blog.csdn.net/gdutxiaoxu/article/details/53576018" target="_blank" rel="noopener">手把手教你用Hexo+Github 搭建属于自己的博客</a>。</p>
-<h2 id="1-1-准备工作"><a href="#1-1-准备工作" class="headerlink" title="1.1. 准备工作"></a>1.1. 准备工作</h2><blockquote>
-<ul>
+<h2 id="1-1-准备工作"><a href="#1-1-准备工作" class="headerlink" title="1.1. 准备工作"></a>1.1. 准备工作</h2><ul>
 <li><a href="https://github.com/" target="_blank" rel="noopener">注册Github</a></li>
 <li><a href="https://git-scm.com/downloads" target="_blank" rel="noopener">下载Git</a></li>
 <li><a href="https://nodejs.org/zh-cn/download/" target="_blank" rel="noopener">下载Node.js</a></li>
 </ul>
-</blockquote>
-<h2 id="1-2-搭建过程"><a href="#1-2-搭建过程" class="headerlink" title="1.2. 搭建过程"></a>1.2. 搭建过程</h2><blockquote>
-<ul>
+<h2 id="1-2-搭建过程"><a href="#1-2-搭建过程" class="headerlink" title="1.2. 搭建过程"></a>1.2. 搭建过程</h2><ul>
 <li>注册Github</li>
 <li>创建仓库</li>
 <li>配置SSH key</li>
@@ -120,7 +117,6 @@
 <li>配置Hexo</li>
 <li>发布文章</li>
 </ul>
-</blockquote>
 <h1 id="2-填坑"><a href="#2-填坑" class="headerlink" title="2. 填坑"></a><strong>2. 填坑</strong></h1><h2 id="2-1-注册Github"><a href="#2-1-注册Github" class="headerlink" title="2.1. 注册Github"></a>2.1. 注册Github</h2><p>按照提示慢慢来就好，注册完后默认公开邮箱，如果想要隐藏自己的邮箱的话点自己头像找到Settings点进去。找打Emails选项，找到<code>Keep my email address private</code>并打勾，<code>Block command line pushes that expose my email</code>前面的勾取消，不取消的话会在部署的时候阻止部署并提示你的邮箱是private需要改成public等等。(神烦，找了一晚上才找打这个问题)</p>
 <ul>
 <li style="list-style: none"><input type="checkbox" checked> Keep my email address private</li>
@@ -148,7 +144,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/11/22/test/" data-id="cjab4svtr00022cfwo1k99ckx" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/11/22/test/" data-id="cjab4svtr00022cfwo1k99ckx" class="article-share-link">Partager</a>
       
       
     </footer>
@@ -193,7 +189,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/11/22/hello-world/" data-id="cjab4svto00012cfwthsveo0t" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/11/22/hello-world/" data-id="cjab4svto00012cfwthsveo0t" class="article-share-link">Partager</a>
       
       
     </footer>
@@ -228,7 +224,7 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Recent Posts</h3>
+    <h3 class="widget-title">Articles récents</h3>
     <div class="widget">
       <ul>
         
@@ -253,7 +249,7 @@
   <div class="outer">
     <div id="footer-info" class="inner">
       &copy; 2017 John Doe<br>
-      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+      Propulsé by <a href="http://hexo.io/" target="_blank">Hexo</a>
     </div>
   </div>
 </footer>
