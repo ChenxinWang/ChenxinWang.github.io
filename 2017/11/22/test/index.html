@@ -11,7 +11,7 @@
 <meta property="og:url" content="http://yoursite.com/2017/11/22/test/index.html">
 <meta property="og:site_name" content="Hexo">
 <meta property="og:description" content="Github+hexo搭建博客（填坑）标签： 博客搭建  目录  前言 准备工作 搭建过程   填坑 注册Github 创建仓库 配置SSH key 安装Hexo 配置Hexo 发布文章   其他  1. 前言搭博客前观望了很久，想来想去最后还是用了Github，不得不说用Github搭真的非常方便。要准备的东西不多，仅仅需要Github账号，Git客户端还有Node.js。网上有非常详细的搭建过">
-<meta property="og:updated_time" content="2017-11-22T14:19:18.988Z">
+<meta property="og:updated_time" content="2017-11-22T14:22:07.213Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="test">
 <meta name="twitter:description" content="Github+hexo搭建博客（填坑）标签： 博客搭建  目录  前言 准备工作 搭建过程   填坑 注册Github 创建仓库 配置SSH key 安装Hexo 配置Hexo 发布文章   其他  1. 前言搭博客前观望了很久，想来想去最后还是用了Github，不得不说用Github搭真的非常方便。要准备的东西不多，仅仅需要Github账号，Git客户端还有Node.js。网上有非常详细的搭建过">
@@ -52,9 +52,9 @@
       </nav>
       <nav id="sub-nav">
         
-          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="Flux RSS"></a>
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
         
-        <a id="nav-search-btn" class="nav-icon" title="Rechercher"></a>
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
       </nav>
       <div id="search-form-wrap">
         <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
@@ -106,19 +106,12 @@
 <li>其他</li>
 </ul>
 <h1 id="1-前言"><a href="#1-前言" class="headerlink" title="1. 前言"></a><strong>1. 前言</strong></h1><p>搭博客前观望了很久，想来想去最后还是用了Github，不得不说用Github搭真的非常方便。要准备的东西不多，仅仅需要Github账号，Git客户端还有Node.js。网上有非常详细的搭建过程，这里就不详讲了，仅简单说下过程然后贴上我参考的博客：<a href="http://blog.csdn.net/gdutxiaoxu/article/details/53576018" target="_blank" rel="noopener">手把手教你用Hexo+Github 搭建属于自己的博客</a>。</p>
-<h2 id="1-1-准备工作"><a href="#1-1-准备工作" class="headerlink" title="1.1. 准备工作"></a>1.1. 准备工作</h2><ul>
-<li><a href="https://github.com/" target="_blank" rel="noopener">注册Github</a></li>
-<li><a href="https://git-scm.com/downloads" target="_blank" rel="noopener">下载Git</a></li>
-<li><a href="https://nodejs.org/zh-cn/download/" target="_blank" rel="noopener">下载Node.js</a></li>
-</ul>
-<h2 id="1-2-搭建过程"><a href="#1-2-搭建过程" class="headerlink" title="1.2. 搭建过程"></a>1.2. 搭建过程</h2><ul>
-<li>注册Github</li>
-<li>创建仓库</li>
-<li>配置SSH key</li>
-<li>安装Hexo</li>
-<li>配置Hexo</li>
-<li>发布文章</li>
-</ul>
+<h2 id="1-1-准备工作"><a href="#1-1-准备工作" class="headerlink" title="1.1. 准备工作"></a>1.1. 准备工作</h2><blockquote>
+<p><a href="https://github.com/" target="_blank" rel="noopener">注册Github</a><br><a href="https://git-scm.com/downloads" target="_blank" rel="noopener">下载Git</a><br><a href="https://nodejs.org/zh-cn/download/" target="_blank" rel="noopener">下载Node.js</a></p>
+</blockquote>
+<h2 id="1-2-搭建过程"><a href="#1-2-搭建过程" class="headerlink" title="1.2. 搭建过程"></a>1.2. 搭建过程</h2><blockquote>
+<p>注册Github<br>创建仓库<br>配置SSH key<br>安装Hexo<br>配置Hexo<br>发布文章</p>
+</blockquote>
 <h1 id="2-填坑"><a href="#2-填坑" class="headerlink" title="2. 填坑"></a><strong>2. 填坑</strong></h1><h2 id="2-1-注册Github"><a href="#2-1-注册Github" class="headerlink" title="2.1. 注册Github"></a>2.1. 注册Github</h2><p>按照提示慢慢来就好，注册完后默认公开邮箱，如果想要隐藏自己的邮箱的话点自己头像找到Settings点进去。找打Emails选项，找到<code>Keep my email address private</code>并打勾，<code>Block command line pushes that expose my email</code>前面的勾取消，不取消的话会在部署的时候阻止部署并提示你的邮箱是private需要改成public等等。(神烦，找了一晚上才找打这个问题)</p>
 <ul>
 <li style="list-style: none"><input type="checkbox" checked> Keep my email address private</li>
@@ -146,7 +139,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/11/22/test/" data-id="cjab4yqut0001eofwlx1pv3zy" class="article-share-link">Partager</a>
+      <a data-url="http://yoursite.com/2017/11/22/test/" data-id="cjab4yqut0001eofwlx1pv3zy" class="article-share-link">Share</a>
       
       
     </footer>
@@ -157,7 +150,7 @@
   
   
     <a href="/2017/11/22/hello-world/" id="article-nav-older" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Ancien</strong>
+      <strong class="article-nav-caption">Older</strong>
       <div class="article-nav-title">Hello World</div>
     </a>
   
@@ -190,7 +183,7 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Articles récents</h3>
+    <h3 class="widget-title">Recent Posts</h3>
     <div class="widget">
       <ul>
         
@@ -215,7 +208,7 @@
   <div class="outer">
     <div id="footer-info" class="inner">
       &copy; 2017 John Doe<br>
-      Propulsé by <a href="http://hexo.io/" target="_blank">Hexo</a>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
     </div>
   </div>
 </footer>
