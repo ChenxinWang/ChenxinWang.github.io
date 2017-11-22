@@ -5,13 +5,16 @@
   
   <title>test | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="article">
+  <meta name="description" content="Github+hexo搭建博客（填坑）标签（空格分隔）： 博客搭建  目录  前言 准备工作 搭建过程   填坑 注册Github 创建仓库 配置SSH key 安装Hexo 配置Hexo 发布文章   其他  1. 前言搭博客前观望了很久，想来想去最后还是用了Github，不得不说用Github搭真的非常方便。要准备">
+<meta property="og:type" content="article">
 <meta property="og:title" content="test">
 <meta property="og:url" content="http://yoursite.com/2017/11/22/test/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:updated_time" content="2017-11-21T17:10:08.714Z">
+<meta property="og:description" content="Github+hexo搭建博客（填坑）标签（空格分隔）： 博客搭建  目录  前言 准备工作 搭建过程   填坑 注册Github 创建仓库 配置SSH key 安装Hexo 配置Hexo 发布文章   其他  1. 前言搭博客前观望了很久，想来想去最后还是用了Github，不得不说用Github搭真的非常方便。要准备的东西不多，仅仅需要Github账号，Git客户端还有Node.js。网上有非常">
+<meta property="og:updated_time" content="2017-11-22T14:17:30.815Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="test">
+<meta name="twitter:description" content="Github+hexo搭建博客（填坑）标签（空格分隔）： 博客搭建  目录  前言 准备工作 搭建过程   填坑 注册Github 创建仓库 配置SSH key 安装Hexo 配置Hexo 发布文章   其他  1. 前言搭博客前观望了很久，想来想去最后还是用了Github，不得不说用Github搭真的非常方便。要准备的东西不多，仅仅需要Github账号，Git客户端还有Node.js。网上有非常">
   
     <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -63,7 +66,7 @@
         <section id="main"><article id="post-test" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2017/11/22/test/" class="article-date">
-  <time datetime="2017-11-21T17:10:08.000Z" itemprop="datePublished">2017-11-22</time>
+  <time datetime="2017-11-21T17:10:08.714Z" itemprop="datePublished">2017-11-22</time>
 </a>
     
   </div>
@@ -82,7 +85,68 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <h1 id="Github-hexo搭建博客（填坑）"><a href="#Github-hexo搭建博客（填坑）" class="headerlink" title="Github+hexo搭建博客（填坑）"></a>Github+hexo搭建博客（填坑）</h1><p>标签（空格分隔）： 博客搭建</p>
+<hr>
+<p>目录</p>
+<ul>
+<li>前言<ul>
+<li>准备工作</li>
+<li>搭建过程</li>
+</ul>
+</li>
+<li>填坑<ul>
+<li>注册Github</li>
+<li>创建仓库</li>
+<li>配置SSH key</li>
+<li>安装Hexo</li>
+<li>配置Hexo</li>
+<li>发布文章</li>
+</ul>
+</li>
+<li>其他</li>
+</ul>
+<h1 id="1-前言"><a href="#1-前言" class="headerlink" title="1. 前言"></a><strong>1. 前言</strong></h1><p>搭博客前观望了很久，想来想去最后还是用了Github，不得不说用Github搭真的非常方便。要准备的东西不多，仅仅需要Github账号，Git客户端还有Node.js。网上有非常详细的搭建过程，这里就不详讲了，仅简单说下过程然后贴上我参考的博客：<a href="http://blog.csdn.net/gdutxiaoxu/article/details/53576018" target="_blank" rel="noopener">手把手教你用Hexo+Github 搭建属于自己的博客</a>。</p>
+<h2 id="1-1-准备工作"><a href="#1-1-准备工作" class="headerlink" title="1.1. 准备工作"></a>1.1. 准备工作</h2><blockquote>
+<ul>
+<li><a href="https://github.com/" target="_blank" rel="noopener">注册Github</a></li>
+<li><a href="https://git-scm.com/downloads" target="_blank" rel="noopener">下载Git</a></li>
+<li><a href="https://nodejs.org/zh-cn/download/" target="_blank" rel="noopener">下载Node.js</a></li>
+</ul>
+</blockquote>
+<h2 id="1-2-搭建过程"><a href="#1-2-搭建过程" class="headerlink" title="1.2. 搭建过程"></a>1.2. 搭建过程</h2><blockquote>
+<ul>
+<li>注册Github</li>
+<li>创建仓库</li>
+<li>配置SSH key</li>
+<li>安装Hexo</li>
+<li>配置Hexo</li>
+<li>发布文章</li>
+</ul>
+</blockquote>
+<h1 id="2-填坑"><a href="#2-填坑" class="headerlink" title="2. 填坑"></a><strong>2. 填坑</strong></h1><h2 id="2-1-注册Github"><a href="#2-1-注册Github" class="headerlink" title="2.1. 注册Github"></a>2.1. 注册Github</h2><p>按照提示慢慢来就好，注册完后默认公开邮箱，如果想要隐藏自己的邮箱的话点自己头像找到Settings点进去。找打Emails选项，找到<code>Keep my email address private</code>并打勾，<code>Block command line pushes that expose my email</code>前面的勾取消，不取消的话会在部署的时候阻止部署并提示你的邮箱是private需要改成public等等。(神烦，找了一晚上才找打这个问题)</p>
+<ul>
+<li style="list-style: none"><input type="checkbox" checked> Keep my email address private</li>
+<li style="list-style: none"><input type="checkbox"> Block command line pushes that expose my email</li>
+</ul>
+<h2 id="2-2-创建仓库"><a href="#2-2-创建仓库" class="headerlink" title="2.2 创建仓库"></a>2.2 创建仓库</h2><p>唯一需要注意的是仓库名严格按照<code>yourname.github.io</code>格式，其中<code>yourname</code>是自己的username，其他默认就行。</p>
+<h2 id="2-3-配置SSH-key"><a href="#2-3-配置SSH-key" class="headerlink" title="2.3 配置SSH key"></a>2.3 配置SSH key</h2><p>注意要正确配置好SSH key防止部署Hexo时报错。<br>Bash下输入：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config --global user.name &quot;username&quot;</span><br><span class="line">git config --global user.email &quot;email&quot;</span><br></pre></td></tr></table></figure></p>
+<p>其中<code>username</code>与<code>email</code>是自己的Github用户名与邮箱。然后输入：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen -t rsa -C &quot;email&quot;</span><br></pre></td></tr></table></figure></p>
+<p>然后一路默认就好，最后将生成的公匙添加到github上。其他的详情见<a href="https://help.github.com/articles/connecting-to-github-with-ssh/" target="_blank" rel="noopener">Connecting to GitHub with SSH</a>。</p>
+<h2 id="2-4-安装Hexo"><a href="#2-4-安装Hexo" class="headerlink" title="2.4 安装Hexo"></a>2.4 安装Hexo</h2><p>可能最麻烦的步骤就是这里了，因为官方源非常慢，经常下载一半停止，强行退出后需要<strong>强制</strong>清理下缓存：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm cache clean --force</span><br></pre></td></tr></table></figure></p>
+<p>更改源：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm config set registry &quot;https://registry.npm.taobao.org&quot;</span><br></pre></td></tr></table></figure></p>
+<p>安装<a href="https://hexo.io/docs/" target="_blank" rel="noopener">Hexo官方文档</a>步骤安装：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g hexo-cli</span><br></pre></td></tr></table></figure></p>
+<p>打开你要放博客的位置初始化Hexo：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo init blog</span><br></pre></td></tr></table></figure></p>
+<p>该命令在当前路径下创建一个blog文件夹并在内完成初始化。进入blog文件夹安装Hexo扩展：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd blog</span><br><span class="line">npm install</span><br></pre></td></tr></table></figure></p>
+<p>到此Hexo就安装完了。blog里文件的详细介绍可以看<a href="https://hexo.io/docs/setup.html" target="_blank" rel="noopener">Hexo官方文档</a>。</p>
+<h2 id="2-5-配置Hexo"><a href="#2-5-配置Hexo" class="headerlink" title="2.5 配置Hexo"></a>2.5 配置Hexo</h2><p>主要是修改<code>./blog</code>文件夹下的<code>_config.yml</code>文件里<code>Deployment</code>的配置：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">deploy:</span><br><span class="line">  type: git</span><br><span class="line">  repo: git@github.com:yourname/yourname.github.io.git</span><br><span class="line">  branch: master</span><br></pre></td></tr></table></figure></p>
+<p>或者<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">deploy:</span><br><span class="line">  type: git</span><br><span class="line">  repo: https://github.com/yourname/yourname.github.io.git</span><br><span class="line">  branch: master</span><br></pre></td></tr></table></figure></p>
+<p>前者为SSH形式，后者为https形式。</p>
+<h2 id="2-6-发布文章"><a href="#2-6-发布文章" class="headerlink" title="2.6 发布文章"></a>2.6 发布文章</h2><p>首先安装扩展，防止发布文章时报错：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure></p>
+<p>用以下命令部署Hexo：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo clean &amp;&amp; d -g</span><br></pre></td></tr></table></figure></p>
+<p>发布文章<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo new post &quot;article&quot;</span><br></pre></td></tr></table></figure></p>
+<p>在<code>./source/_posts</code>路径下将会看到<code>article.md</code>文件。编辑完该文件后需要重新部署：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo d -g</span><br></pre></td></tr></table></figure></p>
+<h1 id="3-其他"><a href="#3-其他" class="headerlink" title="3. 其他"></a><strong>3. 其他</strong></h1><p>其他一些Hexo用法可以参照<a href="https://hexo.io/docs/" target="_blank" rel="noopener">Hexo官方文档</a>，例如更换主题等。</p>
+
       
     </div>
     <footer class="article-footer">
@@ -94,15 +158,6 @@
   
     
 <nav id="article-nav">
-  
-    <a href="/2017/11/22/aaa/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          (no title)
-        
-      </div>
-    </a>
   
   
     <a href="/2017/11/22/hello-world/" id="article-nav-older" class="article-nav-link-wrap">
@@ -142,10 +197,6 @@
     <h3 class="widget-title">Recent Posts</h3>
     <div class="widget">
       <ul>
-        
-          <li>
-            <a href="/2017/11/22/aaa/">(no title)</a>
-          </li>
         
           <li>
             <a href="/2017/11/22/test/">test</a>
