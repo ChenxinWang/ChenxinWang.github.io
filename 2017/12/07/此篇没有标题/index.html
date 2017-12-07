@@ -81,18 +81,18 @@
 
 
 
-<meta name="description" content="转载请注明原博客地址实验CAM的代码时候为了测试大量图片而写了点愚蠢的代码。不得不说有时候不写写代码还真的发现不了自己的思维死角。由于要测试大量图片，没仔细思考就直接在整个代码外套了个循环。。。。。。然后程序不断奔溃。-_-|| 精简后的原代码如下： 12345678910111213141516171819clear">
+<meta name="description" content="实验CAM的代码时候为了测试大量图片而写了点愚蠢的代码然后断断续续花了好几天Debug的故事。">
 <meta name="keywords" content="Bug">
 <meta property="og:type" content="article">
 <meta property="og:title" content="此篇没有标题">
 <meta property="og:url" content="http://yoursite.com/2017/12/07/此篇没有标题/index.html">
 <meta property="og:site_name" content="Now&#39;s Blog">
-<meta property="og:description" content="转载请注明原博客地址实验CAM的代码时候为了测试大量图片而写了点愚蠢的代码。不得不说有时候不写写代码还真的发现不了自己的思维死角。由于要测试大量图片，没仔细思考就直接在整个代码外套了个循环。。。。。。然后程序不断奔溃。-_-|| 精简后的原代码如下： 12345678910111213141516171819clearaddpath(&apos;/home/wcx/caffe/matlab&apos;);for im">
+<meta property="og:description" content="实验CAM的代码时候为了测试大量图片而写了点愚蠢的代码然后断断续续花了好几天Debug的故事。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-12-07T15:16:49.180Z">
+<meta property="og:updated_time" content="2017-12-07T17:20:34.284Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="此篇没有标题">
-<meta name="twitter:description" content="转载请注明原博客地址实验CAM的代码时候为了测试大量图片而写了点愚蠢的代码。不得不说有时候不写写代码还真的发现不了自己的思维死角。由于要测试大量图片，没仔细思考就直接在整个代码外套了个循环。。。。。。然后程序不断奔溃。-_-|| 精简后的原代码如下： 12345678910111213141516171819clearaddpath(&apos;/home/wcx/caffe/matlab&apos;);for im">
+<meta name="twitter:description" content="实验CAM的代码时候为了测试大量图片而写了点愚蠢的代码然后断断续续花了好几天Debug的故事。">
 
 
 
@@ -344,7 +344,8 @@
       
 
       
-        <h2 id="转载请注明原博客地址"><a href="#转载请注明原博客地址" class="headerlink" title="转载请注明原博客地址"></a>转载请注明原博客地址</h2><p>实验<a href="https://github.com/metalbubble/CAM" target="_blank" rel="noopener">CAM</a>的代码时候为了测试大量图片而写了点愚蠢的代码。不得不说有时候不写写代码还真的发现不了自己的思维死角。由于要测试大量图片，没仔细思考就直接在整个代码外套了个循环。。。。。。然后程序不断奔溃。-_-||</p>
+        <p>实验<a href="https://github.com/metalbubble/CAM" target="_blank" rel="noopener">CAM</a>的代码时候为了测试大量图片而写了点愚蠢的代码然后断断续续花了好几天Debug的故事。<br><a id="more"></a></p>
+<p>不得不说有时候不写写代码还真的发现不了自己的思维死角。由于要测试大量图片，没仔细思考就直接在整个代码外套了个循环。。。。。。然后程序不断奔溃。-_-||</p>
 <p>精简后的原代码如下：</p>
 <figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">clear</span><br><span class="line">addpath(<span class="string">'/home/wcx/caffe/matlab'</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> imgID=<span class="number">1</span>:<span class="number">1125</span></span><br><span class="line">    net_weights = [<span class="string">'models/imagenet_googleletCAM_train_iter_120000.caffemodel'</span>];</span><br><span class="line">    net_model = [<span class="string">'models/deploy_googlenetCAM.prototxt'</span>];</span><br><span class="line">    net = caffe.Net(net_model, net_weights, <span class="string">'test'</span>);</span><br><span class="line">    caffe.set_mode_gpu();</span><br><span class="line">    caffe.set_device(<span class="number">0</span>);</span><br><span class="line">    weights_LR = net.params(<span class="string">'CAM_fc'</span>,<span class="number">1</span>).get_data();</span><br><span class="line"></span><br><span class="line">    img = imread([<span class="string">'keyframe/'</span> num2str(imgID) <span class="string">'.png'</span>]);</span><br><span class="line">    [height_original,weight_original,temp]=<span class="built_in">size</span>(img);</span><br><span class="line">    img = imresize(img, [<span class="number">256</span> <span class="number">256</span>]);</span><br><span class="line">    scores = net.forward(&#123;prepare_image(img)&#125;);</span><br><span class="line">    activation_lastconv = net.blobs(<span class="string">'CAM_conv'</span>).get_data();</span><br><span class="line">    scores = scores&#123;<span class="number">1</span>&#125;;</span><br><span class="line">    caffe.reset_all();</span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure>
 <p>老老实实设条件断点定位到每次崩溃停在<code>net = caffe.Net(net_model, net_weights, &#39;test&#39;)</code>。</p>
@@ -352,6 +353,7 @@
 <p>然后在日常debug的时候瞥了下shell发现了点神奇的玩意：<br><code>Check failed: error == cudaSuccess (2 vs. 0) out of memory</code><br>这个<code>out of memory</code>很有意思，有了关键字后在stackoverflow上找到了个<a href="https://stackoverflow.com/questions/33790366/caffe-check-failed-error-cudasuccess-2-vs-0-out-of-memory#" target="_blank" rel="noopener">回答</a>。试着在shell下执行nvidia-smi，发现崩溃的时候Memory-Usage已经跑满了。</p>
 <p>至此bug原因get，bug原因大概是循环中途多次重新加载网络，使得剩余内存越来越碎片化导致matlab不得不不断开辟新的内存空间直到GPU memory耗尽。然后改了循环后整个人都神清气爽了：<br><figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">clear</span><br><span class="line">addpath(<span class="string">'/home/wcx/caffe/matlab'</span>);</span><br><span class="line"></span><br><span class="line">net_weights = [<span class="string">'models/imagenet_googleletCAM_train_iter_120000.caffemodel'</span>];</span><br><span class="line">net_model = [<span class="string">'models/deploy_googlenetCAM.prototxt'</span>];</span><br><span class="line">net = caffe.Net(net_model, net_weights, <span class="string">'test'</span>);</span><br><span class="line">caffe.set_mode_gpu();</span><br><span class="line">caffe.set_device(<span class="number">0</span>);</span><br><span class="line">weights_LR = net.params(<span class="string">'CAM_fc'</span>,<span class="number">1</span>).get_data();</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> imgID=<span class="number">1</span>:<span class="number">1125</span></span><br><span class="line">    img = imread([<span class="string">'keyframe/'</span> num2str(imgID) <span class="string">'.png'</span>]);</span><br><span class="line">    [height_original,weight_original,temp]=<span class="built_in">size</span>(img);</span><br><span class="line">    img = imresize(img, [<span class="number">256</span> <span class="number">256</span>]);</span><br><span class="line">    scores = net.forward(&#123;prepare_image(img)&#125;);</span><br><span class="line">    activation_lastconv = net.blobs(<span class="string">'CAM_conv'</span>).get_data();</span><br><span class="line">    scores = scores&#123;<span class="number">1</span>&#125;;</span><br><span class="line"><span class="keyword">end</span></span><br><span class="line">caffe.reset_all();</span><br></pre></td></tr></table></figure></p>
 <p>所以平时还是得多写写代码积累经验吧，唉。</p>
+<p><strong>请注明原博客地址</strong></p>
 
       
     </div>
@@ -471,17 +473,8 @@
       
 
       
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            文章目录
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
-            站点概览
-          </li>
-        </ul>
-      
 
-      <section class="site-overview-wrap sidebar-panel">
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -562,22 +555,6 @@
         </div>
       </section>
 
-      
-      <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-              
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#转载请注明原博客地址"><span class="nav-number">1.</span> <span class="nav-text">转载请注明原博客地址</span></a></li></ol></div>
-            
-
-          </div>
-        </section>
-      <!--/noindex-->
       
 
       
