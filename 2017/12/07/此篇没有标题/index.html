@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="转载请注明原博客地址 实验CAM的代码时候为了测试大量图片而写了点愚蠢的代码。不得不说有时候不写写代码还真的发现不了自己的思维死角。由于要测试大量图片，没仔细思考就直接在整个代码外套了个循环。。。。。。然后程序不断奔溃。-_-|| 精简后的原代码如下： 12345678910111213141516171819clea">
+<meta name="description" content="转载请注明原博客地址实验CAM的代码时候为了测试大量图片而写了点愚蠢的代码。不得不说有时候不写写代码还真的发现不了自己的思维死角。由于要测试大量图片，没仔细思考就直接在整个代码外套了个循环。。。。。。然后程序不断奔溃。-_-|| 精简后的原代码如下： 12345678910111213141516171819clear">
 <meta name="keywords" content="日常">
 <meta property="og:type" content="article">
 <meta property="og:title" content="此篇没有标题">
 <meta property="og:url" content="http://yoursite.com/2017/12/07/此篇没有标题/index.html">
 <meta property="og:site_name" content="Now&#39;s Blog">
-<meta property="og:description" content="转载请注明原博客地址 实验CAM的代码时候为了测试大量图片而写了点愚蠢的代码。不得不说有时候不写写代码还真的发现不了自己的思维死角。由于要测试大量图片，没仔细思考就直接在整个代码外套了个循环。。。。。。然后程序不断奔溃。-_-|| 精简后的原代码如下： 12345678910111213141516171819clearaddpath(&amp;apos;/home/wcx/caffe/matlab&amp;ap">
+<meta property="og:description" content="转载请注明原博客地址实验CAM的代码时候为了测试大量图片而写了点愚蠢的代码。不得不说有时候不写写代码还真的发现不了自己的思维死角。由于要测试大量图片，没仔细思考就直接在整个代码外套了个循环。。。。。。然后程序不断奔溃。-_-|| 精简后的原代码如下： 12345678910111213141516171819clearaddpath(&amp;apos;/home/wcx/caffe/matlab&amp;apo">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-12-07T13:54:33.878Z">
+<meta property="og:updated_time" content="2017-12-07T13:56:08.477Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="此篇没有标题">
-<meta name="twitter:description" content="转载请注明原博客地址 实验CAM的代码时候为了测试大量图片而写了点愚蠢的代码。不得不说有时候不写写代码还真的发现不了自己的思维死角。由于要测试大量图片，没仔细思考就直接在整个代码外套了个循环。。。。。。然后程序不断奔溃。-_-|| 精简后的原代码如下： 12345678910111213141516171819clearaddpath(&amp;apos;/home/wcx/caffe/matlab&amp;ap">
+<meta name="twitter:description" content="转载请注明原博客地址实验CAM的代码时候为了测试大量图片而写了点愚蠢的代码。不得不说有时候不写写代码还真的发现不了自己的思维死角。由于要测试大量图片，没仔细思考就直接在整个代码外套了个循环。。。。。。然后程序不断奔溃。-_-|| 精简后的原代码如下： 12345678910111213141516171819clearaddpath(&amp;apos;/home/wcx/caffe/matlab&amp;apo">
 
 
 
@@ -310,8 +310,7 @@
       
 
       
-        <p>转载请注明原博客地址</p>
-<p>实验<a href="https://github.com/metalbubble/CAM" target="_blank" rel="noopener">CAM</a>的代码时候为了测试大量图片而写了点愚蠢的代码。不得不说有时候不写写代码还真的发现不了自己的思维死角。由于要测试大量图片，没仔细思考就直接在整个代码外套了个循环。。。。。。然后程序不断奔溃。-_-||</p>
+        <h2 id="转载请注明原博客地址"><a href="#转载请注明原博客地址" class="headerlink" title="转载请注明原博客地址"></a>转载请注明原博客地址</h2><p>实验<a href="https://github.com/metalbubble/CAM" target="_blank" rel="noopener">CAM</a>的代码时候为了测试大量图片而写了点愚蠢的代码。不得不说有时候不写写代码还真的发现不了自己的思维死角。由于要测试大量图片，没仔细思考就直接在整个代码外套了个循环。。。。。。然后程序不断奔溃。-_-||</p>
 <p>精简后的原代码如下：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">clear</span><br><span class="line">addpath(&apos;/home/wcx/caffe/matlab&apos;);</span><br><span class="line"></span><br><span class="line">for imgID=1:1125</span><br><span class="line">    net_weights = [&apos;models/imagenet_googleletCAM_train_iter_120000.caffemodel&apos;];</span><br><span class="line">    net_model = [&apos;models/deploy_googlenetCAM.prototxt&apos;];</span><br><span class="line">    net = caffe.Net(net_model, net_weights, &apos;test&apos;);</span><br><span class="line">    caffe.set_mode_gpu();</span><br><span class="line">    caffe.set_device(0);</span><br><span class="line">    weights_LR = net.params(&apos;CAM_fc&apos;,1).get_data();</span><br><span class="line"></span><br><span class="line">    img = imread([&apos;keyframe/&apos; num2str(imgID) &apos;.png&apos;]);</span><br><span class="line">    [height_original,weight_original,temp]=size(img);</span><br><span class="line">    img = imresize(img, [256 256]);</span><br><span class="line">    scores = net.forward(&#123;prepare_image(img)&#125;);</span><br><span class="line">    activation_lastconv = net.blobs(&apos;CAM_conv&apos;).get_data();</span><br><span class="line">    scores = scores&#123;1&#125;;</span><br><span class="line">    caffe.reset_all();</span><br><span class="line">end</span><br></pre></td></tr></table></figure>
 <p>老老实实设条件断点定位到每次崩溃停在<code>net = caffe.Net(net_model, net_weights, &#39;test&#39;)</code>。</p>
@@ -409,8 +408,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -467,6 +475,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#转载请注明原博客地址"><span class="nav-number">1.</span> <span class="nav-text">转载请注明原博客地址</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
