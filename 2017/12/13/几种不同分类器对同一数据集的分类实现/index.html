@@ -81,18 +81,18 @@
 
 
 
-<meta name="description" content="#前言最近发现我学习机器学习的顺序不太对劲，之前先学了CNN和各种深度学习框架然后才开始看一些正常的分类器。。。不过话说回来，这样顺序导致我现在看这些分类器原理和实现轻松多了。 #正文对同一数据集实验了SVM,DecisionTree,RandomForest以及BP神经网络的效果。前三者使用了Python的sklea">
+<meta name="description" content="最近发现我学习机器学习的顺序不太对劲，之前先学了CNN和各种深度学习框架然后才开始看一些正常的分类器。。。不过话说回来，这样顺序导致我现在看这些分类器原理和实现轻松多了。">
 <meta name="keywords" content="分类器">
 <meta property="og:type" content="article">
 <meta property="og:title" content="几种不同分类器对同一数据集的分类实现">
 <meta property="og:url" content="http://yoursite.com/2017/12/13/几种不同分类器对同一数据集的分类实现/index.html">
 <meta property="og:site_name" content="Now&#39;s Blog">
-<meta property="og:description" content="#前言最近发现我学习机器学习的顺序不太对劲，之前先学了CNN和各种深度学习框架然后才开始看一些正常的分类器。。。不过话说回来，这样顺序导致我现在看这些分类器原理和实现轻松多了。 #正文对同一数据集实验了SVM,DecisionTree,RandomForest以及BP神经网络的效果。前三者使用了Python的sklearn包,写起来非常简单和套模板差不多，BP神经网络用MATLAB实现。数据格式如">
+<meta property="og:description" content="最近发现我学习机器学习的顺序不太对劲，之前先学了CNN和各种深度学习框架然后才开始看一些正常的分类器。。。不过话说回来，这样顺序导致我现在看这些分类器原理和实现轻松多了。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-12-13T13:49:36.674Z">
+<meta property="og:updated_time" content="2017-12-13T13:51:23.719Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="几种不同分类器对同一数据集的分类实现">
-<meta name="twitter:description" content="#前言最近发现我学习机器学习的顺序不太对劲，之前先学了CNN和各种深度学习框架然后才开始看一些正常的分类器。。。不过话说回来，这样顺序导致我现在看这些分类器原理和实现轻松多了。 #正文对同一数据集实验了SVM,DecisionTree,RandomForest以及BP神经网络的效果。前三者使用了Python的sklearn包,写起来非常简单和套模板差不多，BP神经网络用MATLAB实现。数据格式如">
+<meta name="twitter:description" content="最近发现我学习机器学习的顺序不太对劲，之前先学了CNN和各种深度学习框架然后才开始看一些正常的分类器。。。不过话说回来，这样顺序导致我现在看这些分类器原理和实现轻松多了。">
 
 
 
@@ -344,7 +344,7 @@
       
 
       
-        <p>#前言<br>最近发现我学习机器学习的顺序不太对劲，之前先学了CNN和各种深度学习框架然后才开始看一些正常的分类器。。。不过话说回来，这样顺序导致我现在看这些分类器原理和实现轻松多了。</p>
+        <p>最近发现我学习机器学习的顺序不太对劲，之前先学了CNN和各种深度学习框架然后才开始看一些正常的分类器。。。不过话说回来，这样顺序导致我现在看这些分类器原理和实现轻松多了。<br><a id="more"></a></p>
 <p>#正文<br>对同一数据集实验了SVM,DecisionTree,RandomForest以及BP神经网络的效果。<br>前三者使用了Python的sklearn包,写起来非常简单和套模板差不多，BP神经网络用MATLAB实现。<br>数据格式如下：<br>p1       |p2       |p3       |p4       |p5       |p6       |lable<br>———|———|———|———|———|———|———<br>10.922591|5.277203 |0.598352 |0.098681 |81.359452|1.743723 |1<br>51.273865|1.185470 |12.368892|14.047521|19.579670|1.544585 |3<br>60.631204|3.646800 |1.551297 |0.649149 |32.781753|0.739799 |2</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#SVM</span></span><br><span class="line"><span class="keyword">from</span> sklearn <span class="keyword">import</span> SVM</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line">data = np.loadtxt(<span class="string">'./data.txt'</span>, dtype=float, delimiter=<span class="string">' '</span>)</span><br><span class="line">x, y = np.split(data, (<span class="number">6</span>,), axis=<span class="number">1</span>)</span><br><span class="line"></span><br><span class="line">clf = svm.SVC()</span><br><span class="line">clf.fit(x, y.ravel())</span><br><span class="line"></span><br><span class="line">y_predict = clf.predict(x)</span><br></pre></td></tr></table></figure>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#DecisionTree</span></span><br><span class="line"><span class="keyword">from</span> sklearn <span class="keyword">import</span> tree</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"></span><br><span class="line">data = np.loadtxt(<span class="string">'./data.txt'</span>, dtype=float, delimiter=<span class="string">' '</span>)</span><br><span class="line">x, y = np.split(data, (<span class="number">6</span>,), axis=<span class="number">1</span>)</span><br><span class="line"></span><br><span class="line">clf = tree.DecisionTreeClassifier()</span><br><span class="line">clf.fit(x, y.ravel())</span><br><span class="line"></span><br><span class="line">y_predict = clf.predict(x)</span><br></pre></td></tr></table></figure>
