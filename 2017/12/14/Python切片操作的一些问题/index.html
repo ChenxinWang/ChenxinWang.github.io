@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="Python," />
 
 
 
@@ -81,16 +81,18 @@
 
 
 
-<meta name="description" content="兴趣使然的咸鱼，擅长造轮子，目前待业以及在实验室干苦力。">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Now&#39;s Blog">
-<meta property="og:url" content="http://yoursite.com/index.html">
+<meta name="description" content="今天看到个有意思的问题:有以下代码片段，问输出是什么。12a = [&apos;1&apos;, &apos;2&apos;, &apos;3&apos;, &apos;4&apos;, &apos;5&apos;]print(a[:5]) 试了下输出是[&amp;#39;1&amp;#39;, &amp;#39;2&">
+<meta name="keywords" content="Python">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Python切片操作的一些问题">
+<meta property="og:url" content="http://yoursite.com/2017/12/14/Python切片操作的一些问题/index.html">
 <meta property="og:site_name" content="Now&#39;s Blog">
-<meta property="og:description" content="兴趣使然的咸鱼，擅长造轮子，目前待业以及在实验室干苦力。">
+<meta property="og:description" content="今天看到个有意思的问题:有以下代码片段，问输出是什么。12a = [&apos;1&apos;, &apos;2&apos;, &apos;3&apos;, &apos;4&apos;, &apos;5&apos;]print(a[:5]) 试了下输出是[&amp;#39;1&amp;#39;, &amp;#39;2&amp;#39;, &amp;#39;3&amp;#39;, &amp;#39;4&amp;#39;, &amp;#39;5&amp;#39;]很明显索引值越界了，但是这里有个切片操作导致有输出结果而不报错。然后又试了下print(a[6:])：12a =">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2017-12-14T12:48:35.626Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Now&#39;s Blog">
-<meta name="twitter:description" content="兴趣使然的咸鱼，擅长造轮子，目前待业以及在实验室干苦力。">
+<meta name="twitter:title" content="Python切片操作的一些问题">
+<meta name="twitter:description" content="今天看到个有意思的问题:有以下代码片段，问输出是什么。12a = [&apos;1&apos;, &apos;2&apos;, &apos;3&apos;, &apos;4&apos;, &apos;5&apos;]print(a[:5]) 试了下输出是[&amp;#39;1&amp;#39;, &amp;#39;2&amp;#39;, &amp;#39;3&amp;#39;, &amp;#39;4&amp;#39;, &amp;#39;5&amp;#39;]很明显索引值越界了，但是这里有个切片操作导致有输出结果而不报错。然后又试了下print(a[6:])：12a =">
 
 
 
@@ -120,13 +122,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/12/14/Python切片操作的一些问题/"/>
 
 
 
 
 
-  <title>Now's Blog</title>
+  <title>Python切片操作的一些问题 | Now's Blog</title>
   
 
 
@@ -145,8 +147,7 @@
     
   
 
-  <div class="container sidebar-position-left 
-  page-home">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -239,9 +240,9 @@
         <div class="content-wrap">
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
+
+  <div id="posts" class="posts-expand">
     
-      
 
   
 
@@ -271,9 +272,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/12/14/Python切片操作的一些问题/" itemprop="url">Python切片操作的一些问题</a></h1>
+          <h1 class="post-title" itemprop="name headline">Python切片操作的一些问题</h1>
         
 
         <div class="post-meta">
@@ -345,9 +344,7 @@
       
 
       
-        
-          
-            <a id="more"></a>
+        <a id="more"></a>
 <p>今天看到个有意思的问题:<br>有以下代码片段，问输出是什么。<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">a = [<span class="string">'1'</span>, <span class="string">'2'</span>, <span class="string">'3'</span>, <span class="string">'4'</span>, <span class="string">'5'</span>]</span><br><span class="line">print(a[:<span class="number">5</span>])</span><br></pre></td></tr></table></figure></p>
 <p>试了下输出是<code>[&#39;1&#39;, &#39;2&#39;, &#39;3&#39;, &#39;4&#39;, &#39;5&#39;]</code><br>很明显索引值越界了，但是这里有个切片操作导致有输出结果而不报错。然后又试了下<code>print(a[6:])</code>：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">a = [<span class="string">'1'</span>, <span class="string">'2'</span>, <span class="string">'3'</span>, <span class="string">'4'</span>, <span class="string">'5'</span>]</span><br><span class="line">print(a[<span class="number">5</span>:])</span><br></pre></td></tr></table></figure></p>
 <p>输出是<code>[]</code>。<br>上网查了下找到了<a href="http://www.cnblogs.com/ifantastic/archive/2013/04/15/3021845.html" target="_blank" rel="noopener">“Python 序列的切片操作与技巧”</a>这篇博文的一个解释，不过仍有些难以说清的问题：<br>切片的方法是<code>consequence[start_index: stop_index: step]</code>。<br><code>start_index</code>默认为0或者<code>-len(consequence)</code>。<br><code>stop_index</code>默认为<code>len(consequence)-1</code>或者-1。<br><code>step</code>默认为1。<br>其中切片结果包含索引值为<code>start_index</code>的对象但不包含索引值为<code>stop_index</code>的对象。<br>当输入的索引值超出<code>[-len(consequence), len(consequence)-1]</code>这个区间时会被置为相应的缺省值。但是按照这个解释，<code>a[:5]</code>会被缺省为<code>a[:len(consequence)-1]</code>,输出应该是<code>[&#39;1&#39;, &#39;2&#39;, &#39;3&#39;, &#39;4&#39;]</code>。另外按照个缺省值的说法，<code>a[:]</code>会被缺省为<code>a[0:len(consequence)-1]</code>与实际的结果也不符。同样的，上述解释也无法说明<code>a[5:]</code>的结果为空的原因。<br>按照<a href="http://blog.csdn.net/xpresslink/article/details/77727507" target="_blank" rel="noopener">“全面深入彻底理解Python切片操作”</a>这篇博文所说的，切片操作中存在元素的逻辑位置关系。按照这个思路就比较好理解<code>a[5:]</code>结果为空的原因了，因为没有对象可取，所以返回了一个空列表。同样的，如<code>a[2:2]</code>，<code>a[3:2]</code>之类的也是这个原因。<br>对于切片的缺省值问题，在<a href="https://docs.python.org/3/library/functions.html?highlight=slice#slice" target="_blank" rel="noopener">Python的文档</a>里找到了解释：</p>
@@ -360,8 +357,6 @@
 </blockquote>
 <p>缺省值严格来说是下界，上界和None。但这也不好解释<code>a[:]</code>的结果。<br>按我的理解，下界是0，但上界应该与数学分析里的上界类似，所有不小于列表a的最大索引值的数都是上界，而不是上确界，即列表a的最大索引值。在本文的例子中，列表最大索引值是4，那么，只要是大于4的索引值，不管是5，6或者更大的数，对于切片都是一样的，不妨把这个索引值定义为<code>&quot;MAX&quot;</code>。那么<code>a[:]</code>相当于<code>a[0:MAX]</code>，但<code>&quot;MAX&quot;</code>值始终比4大，所以切片的结果就包含了列表最后一个元素，也就是结果为<code>[&#39;1&#39;, &#39;2&#39;, &#39;3&#39;, &#39;4&#39;, &#39;5&#39;]</code>。而<code>a[:5]</code>相当于<code>a[0:MAX]</code>，结果也就是<code>[&#39;1&#39;, &#39;2&#39;, &#39;3&#39;, &#39;4&#39;, &#39;5&#39;]</code>了。至于<code>a[5:]</code>，它相当于<code>a[MAX:MAX]</code>，按照元素的逻辑位置的思路，它没有对象可以取得，因此返回了一个空列表<code>[]</code>。</p>
 
-          
-        
       
     </div>
     
@@ -371,311 +366,70 @@
     
 
     
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>坚持原创技术分享，您的支持将鼓励我继续创作！</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/wechatpay.png" alt="Now 微信支付"/>
+        <p>微信支付</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/images/alipay.png" alt="Now 支付宝"/>
+        <p>支付宝</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
 
     
 
     <footer class="post-footer">
       
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/12/13/几种不同分类器对同一数据集的分类实现/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Now">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/1.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Now's Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/12/13/几种不同分类器对同一数据集的分类实现/" itemprop="url">几种不同分类器对同一数据集的分类实现</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-12-13T21:48:38+08:00">
-                2017-12-13
-              </time>
-            
-
-            
-
-            
-          </span>
-
+        <div class="post-tags">
           
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/机器学习/" itemprop="url" rel="index">
-                    <span itemprop="name">机器学习</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
+            <a href="/tags/Python/" rel="tag"># Python</a>
           
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
         </div>
-      </header>
-    
+      
 
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
+      
       
       
 
       
-        
-          <p>最近发现我学习机器学习的顺序不太对劲，之前先学了CNN和各种深度学习框架然后才开始看一些正常的分类器。。。不过话说回来，这样顺序导致我现在看这些分类器原理和实现轻松多了。<br>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/12/13/几种不同分类器对同一数据集的分类实现/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/12/13/几种不同分类器对同一数据集的分类实现/" rel="next" title="几种不同分类器对同一数据集的分类实现">
+                <i class="fa fa-chevron-left"></i> 几种不同分类器对同一数据集的分类实现
+              </a>
+            
           </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
 
-    
+          <span class="post-nav-divider"></span>
 
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/12/07/此篇没有标题/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Now">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/1.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Now's Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/12/07/此篇没有标题/" itemprop="url">此篇没有标题</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
+          <div class="post-nav-prev post-nav-item">
             
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-12-07T21:37:45+08:00">
-                2017-12-07
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/日常/" itemprop="url" rel="index">
-                    <span itemprop="name">日常</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
+          </div>
         </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
       
 
       
-        
-          <p>实验<a href="https://github.com/metalbubble/CAM" target="_blank" rel="noopener">CAM</a>的代码时候为了测试大量图片而写了点愚蠢的代码然后断断续续花了好几天Debug的故事。<br>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/12/07/此篇没有标题/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
       
     </footer>
   </div>
@@ -685,156 +439,11 @@
   </article>
 
 
-    
-      
 
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/11/24/Github+hexo搭建博客（填坑）/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Now">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/1.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Now's Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/11/24/Github+hexo搭建博客（填坑）/" itemprop="url">Github+hexo搭建博客（填坑）</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-11-24T23:17:25+08:00">
-                2017-11-24
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/博客搭建/" itemprop="url" rel="index">
-                    <span itemprop="name">博客搭建</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>总算是决定动手搭博客了。。。<br>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/11/24/Github+hexo搭建博客（填坑）/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
+    <div class="post-spread">
       
     </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
   </div>
-  
-  
-  
-  </article>
-
-
-    
-  </section>
-
-  
 
 
           </div>
@@ -842,6 +451,10 @@
 
 
           
+
+  
+
+
 
         </div>
         
@@ -1078,6 +691,10 @@
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.3"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.3"></script>
+
+
 
   
 
