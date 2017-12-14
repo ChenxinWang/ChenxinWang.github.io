@@ -346,21 +346,14 @@
 
       
         
-          
-            <a id="more"></a>
-<p>今天看到个有意思的问题:<br>有以下代码片段，问输出是什么。<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">a = [<span class="string">'1'</span>, <span class="string">'2'</span>, <span class="string">'3'</span>, <span class="string">'4'</span>, <span class="string">'5'</span>]</span><br><span class="line">print(a[:<span class="number">5</span>])</span><br></pre></td></tr></table></figure></p>
-<p>试了下输出是<code>[&#39;1&#39;, &#39;2&#39;, &#39;3&#39;, &#39;4&#39;, &#39;5&#39;]</code><br>很明显索引值越界了，但是这里有个切片操作导致有输出结果而不报错。然后又试了下<code>print(a[6:])</code>：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">a = [<span class="string">'1'</span>, <span class="string">'2'</span>, <span class="string">'3'</span>, <span class="string">'4'</span>, <span class="string">'5'</span>]</span><br><span class="line">print(a[<span class="number">5</span>:])</span><br></pre></td></tr></table></figure></p>
-<p>输出是<code>[]</code>。<br>上网查了下找到了<a href="http://www.cnblogs.com/ifantastic/archive/2013/04/15/3021845.html" target="_blank" rel="noopener">“Python 序列的切片操作与技巧”</a>这篇博文的一个解释，不过仍有些难以说清的问题：<br>切片的方法是<code>consequence[start_index: stop_index: step]</code>。<br><code>start_index</code>默认为0或者<code>-len(consequence)</code>。<br><code>stop_index</code>默认为<code>len(consequence)-1</code>或者-1。<br><code>step</code>默认为1。<br>其中切片结果包含索引值为<code>start_index</code>的对象但不包含索引值为<code>stop_index</code>的对象。<br>当输入的索引值超出<code>[-len(consequence), len(consequence)-1]</code>这个区间时会被置为相应的缺省值。但是按照这个解释，<code>a[:5]</code>会被缺省为<code>a[:len(consequence)-1]</code>,输出应该是<code>[&#39;1&#39;, &#39;2&#39;, &#39;3&#39;, &#39;4&#39;]</code>。另外按照个缺省值的说法，<code>a[:]</code>会被缺省为<code>a[0:len(consequence)-1]</code>与实际的结果也不符。同样的，上述解释也无法说明<code>a[5:]</code>的结果为空的原因。<br>按照<a href="http://blog.csdn.net/xpresslink/article/details/77727507" target="_blank" rel="noopener">“全面深入彻底理解Python切片操作”</a>这篇博文所说的，切片操作中存在元素的逻辑位置关系。按照这个思路就比较好理解<code>a[5:]</code>结果为空的原因了，因为没有对象可取，所以返回了一个空列表。同样的，如<code>a[2:2]</code>，<code>a[3:2]</code>之类的也是这个原因。<br>对于切片的缺省值问题，在<a href="https://docs.python.org/3/library/functions.html?highlight=slice#slice" target="_blank" rel="noopener">Python的文档</a>里找到了解释：</p>
-<blockquote>
-<p>class slice(stop)<br>class slice(start, stop[, step])<br>Return a slice object representing the set of indices specified by range(start, stop, step). The start and step arguments default to None. Slice objects have read-only data attributes start, stop and step which merely return the argument values (or their default). They have no other explicit functionality; however they are used by Numerical Python and other third party extensions. Slice objects are also generated when extended indexing syntax is used. For example: a[start:stop:step] or a[start:stop, i]. See itertools.islice() for an alternate version that returns an iterator.</p>
-</blockquote>
-<p>以及<a href="https://docs.python.org/3/reference/expressions.html?highlight=slice" target="_blank" rel="noopener">文档对Slicings的说明</a>：</p>
-<blockquote>
-<p>A slicing selects a range of items in a sequence object (e.g., a string, tuple or list). Slicings may be used as expressions or as targets in assignment or del statements. The syntax for a slicing:<br>slicing      ::=  primary “[“ slice_list “]”<br>slice_list   ::=  slice_item (“,” slice_item)* [“,”]<br>slice_item   ::=  expression | proper_slice<br>proper_slice ::=  [lower_bound] “:” [upper_bound] [ “:” [stride] ]<br>lower_bound  ::=  expression<br>upper_bound  ::=  expression<br>stride       ::=  expression<br>There is ambiguity in the formal syntax here: anything that looks like an expression list also looks like a slice list, so any subscription can be interpreted as a slicing. Rather than further complicating the syntax, this is disambiguated by defining that in this case the interpretation as a subscription takes priority over the interpretation as a slicing (this is the case if the slice list contains no proper slice).<br>The semantics for a slicing are as follows. The primary is indexed (using the same __getitem__() method as normal subscription) with a key that is constructed from the slice list, as follows. If the slice list contains at least one comma, the key is a tuple containing the conversion of the slice items; otherwise, the conversion of the lone slice item is the key. The conversion of a slice item that is an expression is that expression. The conversion of a proper slice is a slice object (see section The standard type hierarchy) whose start, stop and step attributes are the values of the expressions given as lower bound, upper bound and stride, respectively, substituting None for missing expressions.</p>
-</blockquote>
-<p>缺省值严格来说是下界，上界和None。但这也不好解释<code>a[:]</code>的结果。<br>按我的理解，下界是0，但上界应该与数学分析里的上界类似，所有不小于列表a的最大索引值的数都是上界，而不是上确界，即列表a的最大索引值。在本文的例子中，列表最大索引值是4，那么，只要是大于4的索引值，不管是5，6或者更大的数，对于切片都是一样的，不妨把这个索引值定义为<code>&quot;MAX&quot;</code>。那么<code>a[:]</code>相当于<code>a[0:MAX]</code>，但<code>&quot;MAX&quot;</code>值始终比4大，所以切片的结果就包含了列表最后一个元素，也就是结果为<code>[&#39;1&#39;, &#39;2&#39;, &#39;3&#39;, &#39;4&#39;, &#39;5&#39;]</code>。而<code>a[:5]</code>相当于<code>a[0:MAX]</code>，结果也就是<code>[&#39;1&#39;, &#39;2&#39;, &#39;3&#39;, &#39;4&#39;, &#39;5&#39;]</code>了。至于<code>a[5:]</code>，它相当于<code>a[MAX:MAX]</code>，按照元素的逻辑位置的思路，它没有对象可以取得，因此返回了一个空列表<code>[]</code>。</p>
-
-          
+          <p>(不写点什么的话显示出来是全文)<br>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/12/14/Python切片操作的一些问题/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
